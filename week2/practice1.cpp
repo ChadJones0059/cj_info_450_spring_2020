@@ -10,15 +10,15 @@ int main()
     {
         cout << "Please enter a positive number or press 0 to exit. ";
         cin >> userInput;
-        squareUI = userInput * userInput; // this take
+        squareUI = userInput * userInput; // multiplies the user's choice by itself and saves as squareUI
 
         if(userInput > 0)
         {
-          cout << "This number squared is: " << squareUI << endl;
+          cout << "This number squared is: " << squareUI << endl; //prints result
         }
         else if(userInput < 0)
         {
-          cout << endl;
+          continue;
         }
         else if(userInput == 0)
         {

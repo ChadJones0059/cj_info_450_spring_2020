@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int userInput = 1;
+    int i;              //iterator
+    bool prime = true;  //declare prime to be true
+
+    while(userInput != 0)   //start loop, unless user enters 0
+    {
+        cout << "Please enter a positive number or press 0 to exit. ";
+        cin >> userInput;
+        
+        for(i = 2; i <= userInput; i++)     //check to see if divisible by 2 or 3 etc.
+        {
+            if(userInput % i == 0)     //if userInput / 2,3,4... has 0 remainder, then it's NOT prime
+            {
+                prime = false;      //has 0 remainder, prime is not true
+                break;              //break from loop
+            }
+        }
+        if(prime == true)           //check bool statement if true
+        {
+            cout << "This is a prime number. " << endl;     //print output
+            continue;                               //return to top
+        }   
+        else                        //bool statement false
+            cout << "This is NOT a prime number. " << endl;     //print output
+            continue;
+    }
+    return 0; 
+}
