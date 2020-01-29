@@ -19,10 +19,10 @@ int main()
                 prime = false;      //has 0 remainder, prime is not true
                 break;              //break from loop
             }
-            else
+            else                     //if userInput has remainder, the it's prime
             {
-                prime = true;
-                break;
+                prime = true;   
+                break;              //break from loop
             }
             
         }
