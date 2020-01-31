@@ -9,6 +9,7 @@ int main()
 
     while(userInput != 0)   //start loop, unless user enters 0
     {
+        prime = true;
         cout << "Please enter a positive number or press 0 to exit. ";
         cin >> userInput;
         
@@ -19,11 +20,7 @@ int main()
                 prime = false;      //has 0 remainder, prime is not true
                 break;              //break from loop
             }
-            else                     //if userInput has remainder, the it's prime
-            {
-                prime = true; 
-                break;              //break from loop
-            }    
+               
         }
         if(prime == true)           //check bool statement if true
         {
