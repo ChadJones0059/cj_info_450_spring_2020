@@ -4,21 +4,22 @@ using namespace std;
 
 int main()
 {
-    int userInput[10];
-    double sum = 0;
-    double mean = 0;
-    double var = 0;
-    double stdDev = 0;
-    for(int i = 0; i < 10; i++)
+    int userInput[10];      // make an array with length 10
+    double sum = 0;         // declare variable so I can sum all numbers entered
+    double mean = 0;        // mean variable
+    double var = 0;         // variance variable
+    double stdDev = 0;      // standard deviaton variable
+    for(int i = 0; i < 10; i++)     // start for loop for user to enter 10 whole numbers
     {
-        cout << "Enter the number for index " << i << ": ";
-        cin >> userInput[i];
-        sum += userInput[i];
-        mean = sum / 10;
+        cout << "Enter the number for index " << i << ": ";     // print output for each iteration
+        cin >> userInput[i];                                    // store input
+        sum += userInput[i];                                    // add all numbers entered by user
+        mean = sum / 10;                                        // find the average
 
-        var += (userInput[i] - mean)*(userInput[i] - mean);
-        var = var / 10;
-        stdDev = sqrt(var);        
+        // Do I need a for loop here or somewhere else? 
+        var += (userInput[i] - mean)*(userInput[i] - mean);     // adding up user inputs - the mean squared 
+        var = var / 10;                                         // trying to find the variance
+        stdDev = sqrt(var);                                     // find standard deviation 
     }
     cout << "results, " << mean << ", " << stdDev;
     return 0;

@@ -20,8 +20,11 @@ int main(){
   }
   cout << "You have entered 0.  Exiting." << endl; 
 }
-char  get_user_input(){
+char  get_user_input()
+{
    //Implement this function
+   cin >> get_user_input;
+   return;
 
 }
 void to_upper_case(char &letter){
