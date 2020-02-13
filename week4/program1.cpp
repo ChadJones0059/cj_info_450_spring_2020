@@ -25,8 +25,6 @@ double standardDev(double userInput[])
     double sum = 0;
     double mean = 0;
     double stdDev = 0;
-    double var = 0;
-    double meanVar = 0;
 
     for(int i = 0; i < 10; i++)
     {
