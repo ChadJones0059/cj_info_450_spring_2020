@@ -3,9 +3,9 @@
 
 using namespace std;
 string reverse(string *s1);
-string userInput;
 int main()
 {
+    string userInput;
     while(1)
     {
         cout << "Please enter a string: " << endl;
@@ -14,22 +14,21 @@ int main()
         {
             break;
         }
-        reverse(&userInput);
-        cout << "That string reversed is: " << endl;
-        cout << userInput << endl << endl;
+        cout << "That string reversed is: ";
+        cout << reverse(&userInput)<<endl;
     }
     return 0;
 }
 string reverse(string *s1)
 {
-    *s1;                            // s1 makes a copy of userInput. Also assigns same address, correct?
-    int j = s1->length()-1;           // find the length of s1 and - 1
+    string return_value = *s1;                              // s1 makes a copy of userInput. Also assigns same address.
+    int j = return_value.length()-1;                        // find the length of s1 and - 1
     for(int i = 0; i < j; i++)          
     {
-        char container = userInput[i];      // create empty container to shuffle through string, starting with position 0
-        userInput[i] = userInput[j];        // move i from beginning to end, and j to beginning etc..
-        userInput[j] = container;          
+        char container = return_value[i];      // create empty container to shuffle through string, starting with position 0
+        return_value[i] = return_value[j];        // move i from beginning to end, and j to beginning etc..
+        return_value[j] = container;          
         j--;
     }
-    return userInput;
+    return return_value;
 }
