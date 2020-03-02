@@ -21,8 +21,8 @@ int main()
 }
 string reverse(string *s1)
 {
-    string return_value = *s1;                              // s1 makes a copy of userInput. Also assigns same address.
-    int j = return_value.length()-1;                        // find the length of s1 and - 1
+    string return_value = *s1;                              
+    int j = return_value.length()-1;                        
     for(int i = 0; i < j; i++)          
     {
         char container = return_value[i];      // create empty container to shuffle through string, starting with position 0
