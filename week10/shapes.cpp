@@ -25,12 +25,12 @@ class rectangle : public shape{
     int get_perimeter_length(){return (h * 2) + (w * 2);}
     int get_area(){return h * w;}
 };
-class square : public rectangle{
+class square : public shape{
     public:
     int s = 0;
     square(int side){s = side;}
     int get_perimeter_length(){return s * 4;}
-    int get_area(){s * s;}
+    int get_area(){return s * s;}
 };
 int main(){
     shape *s1;
