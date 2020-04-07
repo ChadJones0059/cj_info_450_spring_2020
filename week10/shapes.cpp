@@ -6,8 +6,8 @@ const int PI = 3; // for simplicity, we'll preten PI is 3
 class shape
 {
     public:
-        virtual int get_perimeter_length() = 0;
-        virtual int get_area() = 0;
+        virtual int get_perimeter_length() {return -1;}
+        virtual int get_area() {return -1;}
 };
 
 class circle : public shape{
