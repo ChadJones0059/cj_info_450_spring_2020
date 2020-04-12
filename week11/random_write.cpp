@@ -9,7 +9,7 @@ int main()
     out.open("randoms");
     for(int i = 0; i < n; i++)
     {
-        out << rand() % 10000 + -9999 << endl;
+        out << rand() % 20000 -9999 << endl;
     }
     return 0;
 }
