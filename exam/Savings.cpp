@@ -7,6 +7,7 @@ Savings::Savings()  // declare values in default constructor
     SetName("");       
     SetTaxID(85912345);
     SetBalance(0);
+    
     Account::numdeposits = 0;
     Account::numwithdrawals = 0;
     
@@ -22,6 +23,7 @@ Savings::Savings(string p_name, long p_id, double p_bal)  // declare vlaues in s
     SetName(p_name);    //pass p_name
     SetTaxID(p_id);     // pass p_id
     SetBalance(p_bal);  // pass p_bal
+    
     Account::numdeposits = 0;   // counter 
     Account::numwithdrawals = 0;    //counter
  
@@ -34,7 +36,7 @@ Savings::Savings(string p_name, long p_id, double p_bal)  // declare vlaues in s
  
 void Savings::DoWithdraw(double amount) // Withdraw amount from savings
 {
-    SetBalance(GetBalance()-amount);    // set balance
+    SetBalance(GetBalance()-amount);    // set balance, subtract amount when called
     for (int i = 0; i < 10; i++)
     {
         if (last10withdrawals[i] == 0) // if last in array is null then that becomes the amount
@@ -46,7 +48,7 @@ void Savings::DoWithdraw(double amount) // Withdraw amount from savings
     }
     for (int i = 0; i < 10; i++)    //increment through to end of array
     {
-        if (i < 9)
+        if (i < 9)      // while i<9 find last number in array, and push it to 10
         {
             last10withdrawals[i] = last10withdrawals[i+1];  // if no empty elements, shift elements back one slot
         }
@@ -63,18 +65,18 @@ void Savings::display() const // display savings info
     cout << "TaxID: " << GetTaxID() << endl;
     cout << "Balance: $" << GetBalance() << endl;
     
-    cout << "Last 10 withdrawls: ";
-    for (int i = 0; i < 10; i++)
+    cout << "Last 10 withdrawls: \n";
+    for (int i = 0; i < 10; i++)    // iterate through 10 spots in array
     {
-        cout << "$" << last10withdrawals[i] << endl;   // display last10withdraws array
+        cout << "$" << last10withdrawals[i] << endl;   // print last10withdraws array
     }
     cout << endl;
     
-    cout << "Last 10 deposits: ";
-    for (int i = 0; i < 10; i++)
+    cout << "Last 10 deposits: \n" << endl;
+    for (int i = 0; i < 10; i++)    // iterate through 10 spots in array
     {
-        cout << "$" << last10deposits[i] << endl;   // display last10deposits to screen
+        cout << "$" << last10deposits[i] << endl;   // print out last10deposits array
     }
-    cout << "\nNumber of deposits: " << Account::numdeposits << endl;
-    cout << "Number of withdrawals: " << Account::numwithdrawals << endl;
+    cout << "Number of deposits: " << Account::numdeposits << endl;     // print out total number of deposits
+    cout << "Number of withdrawals: " << Account::numwithdrawals << endl;   // print out total number of withdrawals
 }

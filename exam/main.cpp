@@ -38,7 +38,7 @@ void print_menu(int input, Savings *savAcc, Checking *chkAcc, CreditCard *ccAcc)
    cout << "*        9. Display Credit Card                           *" << endl;
    cout << "*        0. Exit                                          *" << endl;
    cout << "***********************************************************" << endl;
-   cout << "Checking Balance: \t Checking Balance: \t Credit Card Balance:" << endl;
+   cout << "Checking Balance: \t Savings Balance: \t Credit Card Balance:" << endl;
    cout << "\t$" << chkAcc->GetBalance() << "\t\t\t$" << savAcc->GetBalance() << "\t\t\t$" << ccAcc->GetBalance() << endl;
    cin >> input;
    select_menu(input, savAcc, chkAcc, ccAcc);       // method to see what user selects
@@ -50,10 +50,10 @@ int main()
    string userInput;   // set name
    long id = 85912345;  // set id
    double balance = 100;  // set starting balance at $100
-   cout << "*****************************************************************" << endl;
-   cout << "              WELCOME TO THE BANK OF VCU                         " << endl;
-   cout << "*****************************************************************\n" << endl;
-   cout << "              Please enter your name: ";
+   cout << "****************************************************************" << endl;
+   cout << "*              WELCOME TO THE BANK OF VCU                      *" << endl;
+   cout << "****************************************************************\n" << endl;
+   cout << "               Please enter your name: ";
    getline(cin,userInput);
 
    Savings *savAcc = new Savings(userInput, id, balance);   // setup the three userInput objects and pointers
@@ -113,55 +113,61 @@ void select_menu(int user_selection, Savings *savAcc, Checking *chkAcc, CreditCa
 
 void savings_deposit(Savings *savAcc)   // savings deposit method
 {
- double depositAmount=0;
- cout << "Savings Deposit Amount: $";
- cin >> depositAmount;
- savAcc->MakeDeposit(depositAmount);
+   double depositAmount=0;
+   cout << "Savings Deposit Amount: $";
+   cin >> depositAmount;
+   savAcc->MakeDeposit(depositAmount);
+   cout << "Thank You. Your Transaction Has Been Processed \n" << endl;
 }
  
 void savings_withdrawal(Savings *savAcc) // savings withdrawl method
 {
- double withdrawAmount = 0;
- cout << "Savings Withdrawal Amount: $";
- cin >> withdrawAmount;
- savAcc->DoWithdraw(withdrawAmount);
+   double withdrawAmount = 0;
+   cout << "Savings Withdrawal Amount: $";
+   cin >> withdrawAmount;
+   savAcc->DoWithdraw(withdrawAmount);
+   cout << "Thank You. Your Transaction Has Been Processed \n" << endl;
 }
  
 void checking_deposit(Checking *chkAcc)       // checkings depsosit method
 {
- double depositAmount = 0;
- cout << "Checking Deposit Amount: $";
- cin >> depositAmount;
- chkAcc->MakeDeposit(depositAmount);
+   double depositAmount = 0;
+   cout << "Checking Deposit Amount: $";
+   cin >> depositAmount;
+   chkAcc->MakeDeposit(depositAmount);
+   cout << "Thank You. Your Transaction Has Been Processed \n" << endl;
 }
  
 void checking_check(Checking *chkAcc)   // checkings withdrawal method
 {
- double checkAmount = 0;
- int checkNum = 0;
- cout << "Check Number: ";
- cin >> checkNum;
- cout << "Check Amount: $";
- cin >> checkAmount;         
- chkAcc->WriteCheck(checkNum, checkAmount);
+   double checkAmount = 0;
+   int checkNum = 0;
+   cout << "Check Number: ";
+   cin >> checkNum;
+   cout << "Check Amount: $";
+   cin >> checkAmount;         
+   chkAcc->WriteCheck(checkNum, checkAmount);
+   cout << "Thank You. Your Transaction Has Been Processed \n" << endl;
 }
  
 void cc_payment(CreditCard *ccAcc)   // creditcard deposit method
 {
- double cc_payment = 0;
- cout << "Credit Card Payment Amount: $";
- cin >> cc_payment;
- ccAcc->MakePayment(cc_payment);
+   double cc_payment = 0;
+   cout << "Credit Card Payment Amount: $";
+   cin >> cc_payment;
+   ccAcc->MakePayment(cc_payment);
+   cout << "Thank You. Your Transaction Has Been Processed \n" << endl;
 }
  
 void cc_charge(CreditCard *ccAcc)   // creditcard withdrawal method
 {
- string local;
- double cc_charge = 0;
- cout << "Location of Credit Card:  ";
- cin.ignore();     // http://www.cplusplus.com/reference/istream/istream/ignore
- getline(cin, local);
- cout << "Amount to Charge: $";
- cin >> cc_charge;
- ccAcc->DoCharge(local, cc_charge);
+   string local;
+   double cc_charge = 0;
+   cout << "Location of Credit Card:  ";
+   cin.ignore();     // http://www.cplusplus.com/reference/istream/istream/ignore
+   getline(cin, local);
+   cout << "Amount to Charge: $";
+   cin >> cc_charge;
+   ccAcc->DoCharge(local, cc_charge);
+   cout << "Thank You. Your Transaction Has Been Processed \n" << endl;
 }

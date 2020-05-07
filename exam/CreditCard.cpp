@@ -7,10 +7,12 @@ CreditCard::CreditCard()  // declare values in default constructor
 {
     SetName("");      
     SetTaxID(85912345);
-    SetBalance(0);
+    SetBalance(0); 
     cardnumber = 0000000;
+    
     Account::numdeposits = 0;   // counter to keep track of num deposits
     Account::numwithdrawals = 0;    // counter to keep track of num withdrawals
+    
     for (int i = 0; i < 10; i++)
     {
         last10deposits[i] = 0;
@@ -25,8 +27,10 @@ CreditCard::CreditCard(string p_name, long p_id, double p_bal)  // declare vlaue
     SetTaxID(p_id);
     SetBalance(p_bal);
     cardnumber = 0000000;
-    Account::numdeposits = 0;
-    Account::numwithdrawals = 0;
+    
+    Account::numdeposits = 0;   // counter to keep track of num deposits
+    Account::numwithdrawals = 0;    // counter to keep track of num withdrawals
+    
     for (int i = 0; i < 10; i++)
     {
         last10deposits[i] = 0;
@@ -95,13 +99,13 @@ void CreditCard::display() const  //display cc info
     cout << "Last 10 charges: ";
     for (int i = 0; i < 10; i++)
     {
-        cout << last10charges[i] <<"---$" << last10withdrawals[i] << endl;   // last 10 locations and amount
+        cout << last10charges[i] <<"---$" << last10withdrawals[i] << endl;   // print last 10 locations and amount
     }
     cout << endl;
     cout << "Last 10 payments: ";
     for (int i = 0; i < 10; i++)
     {
-        cout << "$" << last10deposits[i] << endl;   // last 10 payments
+        cout << "$" << last10deposits[i] << endl;   // print last 10 payments
     }
     cout << "\nNumber of deposits: " << Account::numdeposits << endl;
     cout << "Number of withdrawals: " << Account::numwithdrawals << endl;

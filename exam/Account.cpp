@@ -9,8 +9,8 @@ Account::Account()  // declare values in default constructor
   taxID = 85912345;
   balance = 0;
   
-  Account::numdeposits = 0;
-  Account::numwithdrawals = 0;
+  Account::numdeposits = 0;   // counter to keep track of deposits
+  Account::numwithdrawals = 0;  // counter to keep track of withdrawals
   
   for (int i = 0; i < 10; i++)  // keep track of deposit and withdrawal arrays
   {
@@ -18,21 +18,23 @@ Account::Account()  // declare values in default constructor
     last10withdrawals[i] = 0;
   }
 }
+
 Account::Account(string p_name, long p_id, double p_bal)  // declare vlaues in secondary constructor
 {
   name = p_name;
   taxID = p_id;
   balance = p_bal;
   
-  Account::numdeposits = 0;
-  Account::numwithdrawals = 0;
+  Account::numdeposits = 0;     // counter to keep track of deposits
+  Account::numwithdrawals = 0;    // counter to keep track of withdrawals
   
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < 10; i++)    // keep track of deposit and withdrawal arrays
   {
     last10deposits[i] = 0;
     last10withdrawals[i] = 0;
   }
 }
+
 void Account::SetName(string p_name)  //method to set name
 {
   name = p_name;   // set user name
@@ -77,7 +79,7 @@ void Account::MakeDeposit(double amount)
   }
   for (int i = 0; i < 10; i++)  // keep track of deposits in array
   {
-    if (i < 9)
+    if (i < 9)    // while i<9 find last number in array, and push it to 9
     {
       last10deposits[i] = last10deposits[i+1];
     }
